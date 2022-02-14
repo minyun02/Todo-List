@@ -20,10 +20,10 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String indexPage(Model model){
+    public String indexPage(Model model, @LoginUser SessionUser user){
         model.addAttribute("todos", todoService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
 
         if(user != null){
             model.addAttribute("userName", user.getName());
