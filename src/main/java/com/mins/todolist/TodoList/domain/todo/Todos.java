@@ -1,4 +1,4 @@
-package com.mins.todolist.TodoList.domain;
+package com.mins.todolist.TodoList.domain.todo;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Todos {
+public class Todos extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,28 +24,19 @@ public class Todos {
 
     private String author;
 
-    private int status;
-
-    @CreationTimestamp
-    private LocalDateTime createdDate;
-
-    @UpdateTimestamp
-    private LocalDateTime lastUpdatedDate;
+    private String status;
 
     @Builder
-    public Todos(String category, String content, String author, int status, LocalDateTime createdDate, LocalDateTime lastUpdatedDate) {
+    public Todos(String category, String content, String author, String status) {
         this.category = category;
         this.content = content;
         this.author = author;
         this.status = status;
-        this.createdDate = createdDate;
-        this.lastUpdatedDate = lastUpdatedDate;
     }
 
-    public void update(String category, String content, int status, LocalDateTime lastUpdatedDate) {
+    public void update(String category, String content, String status) {
         this.category = category;
         this.content = content;
         this.status = status;
-        this.lastUpdatedDate = lastUpdatedDate;
     }
 }

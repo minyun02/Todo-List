@@ -27,4 +27,10 @@ public class TodoApiController {
     public TodoResponseDto findById(@PathVariable Long id){
         return todoService.findById(id);
     }
+
+    @DeleteMapping("/api/todos/{id}")
+    public Long delete(@PathVariable Long id){
+        todoService.delete(id);
+        return id;
+    }
 }

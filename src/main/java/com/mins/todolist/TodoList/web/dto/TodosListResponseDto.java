@@ -6,22 +6,20 @@ import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-public class TodoResponseDto {
+public class TodosListResponseDto {
     private Long id;
-
     private String category;
-
     private String content;
-
     private String author;
-
     private String status;
+    private LocalDateTime modifiedDate;
 
-    public TodoResponseDto(Todos entity){
+    public TodosListResponseDto(Todos entity){
         this.id = entity.getId();
         this.category = entity.getCategory();
         this.content = entity.getContent();
         this.author = entity.getAuthor();
         this.status = entity.getStatus();
+        this.modifiedDate = entity.getModifiedDate();
     }
 }

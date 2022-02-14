@@ -1,6 +1,6 @@
 package com.mins.todolist.TodoList.web.dto;
 
-import com.mins.todolist.TodoList.domain.Todos;
+import com.mins.todolist.TodoList.domain.todo.Todos;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,20 +16,14 @@ public class TodoSaveRequestDto {
 
     private String author;
 
-    private int status;
-
-    private LocalDateTime createdDate;
-
-    private LocalDateTime lastUpdatedDate;
+    private String status;
 
     @Builder
-    public TodoSaveRequestDto(String category, String content, String author, int status, LocalDateTime createdDate, LocalDateTime lastUpdatedDate) {
+    public TodoSaveRequestDto(String category, String content, String author, String status) {
         this.category = category;
         this.content = content;
         this.author = author;
         this.status = status;
-        this.createdDate = createdDate;
-        this.lastUpdatedDate = lastUpdatedDate;
     }
 
     public Todos toEntity(){
@@ -38,8 +32,6 @@ public class TodoSaveRequestDto {
                 .content(content)
                 .author(author)
                 .status(status)
-                .createdDate(createdDate)
-                .lastUpdatedDate(lastUpdatedDate)
                 .build();
     }
 }

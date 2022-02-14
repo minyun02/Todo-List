@@ -1,14 +1,12 @@
 package com.mins.todolist.TodoList.web.user;
 
+import com.mins.todolist.TodoList.service.TodoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class UserController {
 
-    @GetMapping("/")
-    public String indexPage(){
-        return "뭘 보내줘야할까??";
-    }
 }

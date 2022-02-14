@@ -14,15 +14,12 @@ public class TodoUpdateRequestDto {
 
     private String content;
 
-    private int status;
-
-    private LocalDateTime lastUpdatedDate;
+    private String status;
 
     @Builder
-    public TodoUpdateRequestDto(String category, String content, int status, LocalDateTime lastUpdatedDate) {
+    public TodoUpdateRequestDto(String category, String content, String status) {
         this.category = category;
         this.content = content;
         this.status = status;
-        this.lastUpdatedDate = lastUpdatedDate;
     }
 }
