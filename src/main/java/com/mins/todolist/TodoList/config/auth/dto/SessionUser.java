@@ -3,8 +3,10 @@ package com.mins.todolist.TodoList.config.auth.dto;
 import com.mins.todolist.TodoList.domain.user.User;
 import lombok.Getter;
 
+import java.io.Serializable;
+
 @Getter
-public class SessionUser {
+public class SessionUser implements Serializable {
     //여기에는 인증된 상요자 정보만 필요
     //그 외에 필요한 정보들은 없으니 아래 필드만 선언
     private String name;

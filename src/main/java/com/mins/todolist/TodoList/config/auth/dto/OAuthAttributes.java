@@ -55,7 +55,7 @@ public class OAuthAttributes {
     }
 
     public User toEntity() {
-//        return User.builder().name(name).email(email).picture(picture).role(Role.GUEST).build();
-        return new User(name, email, picture, Role.GUEST);
+        return User.builder().name(name).email(email).picture(picture).role(Role.GUEST).build();
+//        return new User(name, email, picture, Role.GUEST);
     }
 }
