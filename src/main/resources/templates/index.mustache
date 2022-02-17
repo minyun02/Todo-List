@@ -17,7 +17,17 @@
         </div>
     </div>
     <br>
-    <div>timer</div>
+    <div>
+        오늘 전체 횟수 , 오늘 총 공부 시간, 오늘 목표
+    </div>
+    <br>
+    <div id="timer">
+        <button id="btn-pause">pause</button>
+        <button id="btn-start">start</button>
+        <button id="btn-reset">reset</button>
+        <input type="text" id="time" value="20">
+        <input type="text" id="timeOnLoad" value="20">
+    </div>
     <br>
     <!-- 목록 출력 영역 -->
     <table class="table table-horizontal table-bordered">
@@ -27,8 +37,8 @@
             <th>카테고리</th>
             <th>내용</th>
             <th>작성자</th>
-            <th>상태</th>
-            <th>최종수정일</th>
+            <th>횟수</th>
+            <th>완료</th>
         </tr>
         </thead>
         <tbody id="tbody">
@@ -38,8 +48,8 @@
                 <td>{{category}}</td>
                 <td><a href="/todos/update/{{id}}">{{content}}</a></td>
                 <td>{{author}}</td>
+                <td>횟수들어갈곳</td>
                 <td>{{status}}</td>
-                <td>{{modifiedDate}}</td>
             </tr>
         {{/todos}}
         </tbody>
